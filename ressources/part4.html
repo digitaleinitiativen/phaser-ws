@@ -28,7 +28,7 @@ function preload() {
 var platforms;
 
 function create() {
-
+    /* STEP 4 */
     //  We're going to be using physics, so enable the Arcade Physics system
     game.physics.startSystem(Phaser.Physics.ARCADE);
 
@@ -58,6 +58,7 @@ function create() {
     ledge = platforms.create(-150, 250, 'ground');
 
     ledge.body.immovable = true;
+    /* END STEP 4 */
     
 }
 

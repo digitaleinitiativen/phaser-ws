@@ -76,6 +76,7 @@ function create() {
     player.animations.add('left', [0, 1, 2, 3], 10, true);
     player.animations.add('right', [5, 6, 7, 8], 10, true);
 
+    /* STEP 8 */
     //  Finally some stars to collect
     stars = game.add.group();
 
@@ -94,6 +95,7 @@ function create() {
         //  This just gives each star a slightly random bounce value
         star.body.bounce.y = 0.7 + Math.random() * 0.2;
     }
+    /* END STEP 8 */
 
     //  Our controls.
     cursors = game.input.keyboard.createCursorKeys();
@@ -106,8 +108,10 @@ function update() {
     game.physics.arcade.collide(player, platforms);
     game.physics.arcade.collide(stars, platforms);
 
+    /* STEP 8 */
     //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
     game.physics.arcade.overlap(player, stars, collectStar, null, this);
+    /* END STEP 8 */
 
     //  Reset the players velocity (movement)
     player.body.velocity.x = 0;
